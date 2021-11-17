@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD.replace(new RegExp('<link rel="preload" href="/_nuxt/([a-f0-9]{7})\.js" as="script">', 'g'), '') }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP.replace(new RegExp('script src="/_nuxt/([a-f0-9]{7})\.js"', 'g'), 'script data-type="lazy" data-src="/_nuxt/$1.js"') }}
+    <script type="text/javascript">
+      const loadScriptsTimer = setTimeout(loadScripts, 500);
+      const userInteractionEvents=["mouseover","keydown","touchstart","touchmove","wheel"];
+      userInteractionEvents.forEach(function(event){
+        window.addEventListener(event,triggerScriptLoader,{passive:!0})});
+        function triggerScriptLoader(){
+          loadScripts();
+          clearTimeout(loadScriptsTimer);
+          userInteractionEvents.forEach(function(event){
+            window.removeEventListener(event,triggerScriptLoader,{passive:!0})
+          })
+        }
+      function loadScripts(){
+        Array.from(document.querySelectorAll("script[data-type='lazy']")).forEach(function(elem){
+          elem.setAttribute("src",elem.getAttribute("data-src"))
+        })
+      }
+    </script>
+  </body>
+</html>

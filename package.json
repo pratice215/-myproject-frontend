@@ -1,0 +1,39 @@
+{
+  "name": "myproject-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "export": "nuxt export",
+    "test": "exit 0",
+    "test:all": "exit 0",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style"
+  },
+  "resolutions": {
+    "@nuxtjs/vuetify/**/sass": "1.32.12"
+  },
+  "dependencies": {
+    "@nuxtjs/ngrok": "^2.0.0",
+    "@nuxtjs/axios": "5.13.1",
+    "cross-env": "7.0.3",
+    "express": "4.17.1",
+    "nuxt": "2.15.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "6.0.0",
+    "@nuxtjs/eslint-module": "3.0.2",
+    "@nuxtjs/stylelint-module": "4.0.0",
+    "@nuxtjs/vuetify": "1.11.3",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.24.0",
+    "eslint-plugin-nuxt": "2.0.0",
+    "esm": "3.2.25",
+    "nodemon": "2.0.7",
+    "stylelint": "13.12.0",
+    "stylelint-config-standard": "21.0.0"
+  }
+}

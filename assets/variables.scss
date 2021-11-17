@@ -1,0 +1,49 @@
+$primary-color: #2f80ed;
+$primary-color-dark1: darken($primary-color, 4%);
+$primary-color-dark2: darken($primary-color, 8%);
+$primary-color-light1: lighten($primary-color, 4%);
+$primary-color-light2: lighten($primary-color, 8%);
+$primary-color-light3: lighten($primary-color, 12%);
+
+$secondary-color: #f2c94c;
+
+$border-color: #e2ebf8;
+
+$body-font-family: 'Roboto', helvetica, sans-serif !important;
+$text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+
+$text-color: #4d4d4d;
+$text-color-light: #8a949b;
+$text-color-dark: #3a4c58;
+
+$background-color: #f2f8ff;
+
+$border-radius-root: 6px;
+$font-size-root: 16px;
+
+$btn-letter-spacing: inherit;
+$btn-text-transform: none;
+$btn-font-weight: 500;
+$btn-hover-opacity: 0.04;
+
+$btn-font-sizes: (
+  'x-small': 0.75rem,
+  'small': 0.825rem,
+  'default': 1rem,
+  'large': 1.125rem,
+  'x-large': 1.25rem
+);
+
+$color-pack: false;
+
+$grid-breakpoints: (
+  'xs': 0,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1280px - 16px,
+  'xl': 1920px - 16px
+);
+
+$md-and-up: 'only screen and (min-width: #{map-get($grid-breakpoints, 'md')})';
+$sm-and-down: 'only screen and (max-width: #{map-get($grid-breakpoints, 'md') - 1})';
+$xs-only: 'only screen and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})';
