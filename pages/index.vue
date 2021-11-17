@@ -1,24 +1,22 @@
 <template>
-  <app-layout>
-    <v-container>
-      <h1>Welcome!</h1>
-      <v-progress-circular v-if="loading" indeterminate color="primary" />
-      <div v-else>
-        You last visited this site at: {{ lastDate || 'Never' }}.<br>
-      </div>
-    </v-container>
-    <template #footer>
-      <app-footer />
-    </template>
-  </app-layout>
+  <v-container>
+    <h1>Welcome!</h1>
+    <v-progress-circular v-if="loading" indeterminate color="primary" />
+    <div v-else-if="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <div v-else>
+      You last visited this site at: {{ lastDate || 'Never' }}.<br>
+    </div>
+  </v-container>
 </template>
 
 <script>
 export default {
-  layout: 'empty',
   data () {
     return {
       loading: true,
+      errorMessage: null,
       lastDate: null
     }
   },
@@ -28,7 +26,7 @@ export default {
       const response = await this.$axios.$get('/api')
       this.lastDate = response.lastDate
     } catch (error) {
-      this.otherError = error.message
+      this.errorMessage = error.message
     }
     this.loading = false
   },

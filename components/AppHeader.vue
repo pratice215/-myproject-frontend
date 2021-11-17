@@ -19,7 +19,7 @@
         </nuxt-link>
       </div>
       <v-spacer />
-      <v-btn dark href="https://www.tonoid.com" target="_blank">
+      <v-btn primary href="https://www.tonoid.com" target="_blank">
         Visit tonoïd
       </v-btn>
     </v-app-bar>
