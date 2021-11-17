@@ -61,9 +61,9 @@ module.exports = {
     credentials: true
   },
   proxy: {
-    '/api': {
+    '/lastDate': {
       target: apiUrl,
-      pathRewrite: { '^/api': '/' }
+      pathRewrite: { '^/lastDate': '/' }
     }
   },
 
