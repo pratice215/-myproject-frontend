@@ -1,3 +1,5 @@
+const apiRoot = process.env.API_ROOT || 'http://localhost:4000'
+
 module.exports = {
   /*
   ** Nuxt rendering mode
@@ -48,21 +50,14 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/axios'
   ],
 
   axios: {
     proxy: true,
-    credentials: true
+    credentials: true,
+    baseUrl: apiRoot
   },
-  proxy: {
-    '/api/': {
-      target: process.env.API_ROOT || 'http://localhost:4000',
-      pathRewrite: { '^/api/': '' }
-    }
-  },
-
   /*
   ** ESlint
   */
