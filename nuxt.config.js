@@ -1,5 +1,3 @@
-const apiUrl = process.env.API_URL || 'http://localhost:4000'
-
 module.exports = {
   /*
   ** Nuxt rendering mode
@@ -50,8 +48,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-  // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   axios: {
@@ -59,9 +57,9 @@ module.exports = {
     credentials: true
   },
   proxy: {
-    '/api': {
-      target: apiUrl,
-      pathRewrite: { '^/api': '/' }
+    '/api/': {
+      target: process.env.API_URL || 'http://localhost:4000',
+      pathRewrite: { '^/api/': '' }
     }
   },
 
@@ -103,9 +101,7 @@ module.exports = {
     }
   },
 
-  serverMiddleware: [
-    { path: '/~health', handler: '~/api/health.js' }
-  ],
+  serverMiddleware: [],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
