@@ -58,7 +58,7 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: process.env.API_URL || 'http://localhost:4000',
+      target: process.env.API_ROOT || 'http://localhost:4000',
       pathRewrite: { '^/api/': '' }
     }
   },
