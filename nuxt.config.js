@@ -96,7 +96,9 @@ module.exports = {
     }
   },
 
-  serverMiddleware: [],
+  serverMiddleware: [
+    { path: '/~health', handler: '~/api/health.js' }
+  ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
