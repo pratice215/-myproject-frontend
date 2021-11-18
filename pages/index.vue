@@ -23,7 +23,7 @@ export default {
   async fetch () {
     this.loading = true
     try {
-      const response = await this.$axios.$get('/lastDate')
+      const response = await this.$axios.$get('/api')
       this.lastDate = response.lastDate
     } catch (error) {
       this.errorMessage = error.message

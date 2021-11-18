@@ -9,8 +9,8 @@ $secondary-color: #f2c94c;
 
 $border-color: #e2ebf8;
 
-$body-font-family: 'Roboto', helvetica, sans-serif !important;
-$text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+$body-font-family: "Roboto", helvetica, sans-serif !important;
+$text-shadow: 0 1px 0 rgb(0 0 0 / 20%);
 
 $text-color: #4d4d4d;
 $text-color-light: #8a949b;
@@ -27,23 +27,23 @@ $btn-font-weight: 500;
 $btn-hover-opacity: 0.04;
 
 $btn-font-sizes: (
-  'x-small': 0.75rem,
-  'small': 0.825rem,
-  'default': 1rem,
-  'large': 1.125rem,
-  'x-large': 1.25rem
+  "x-small": 0.75rem,
+  "small": 0.825rem,
+  "default": 1rem,
+  "large": 1.125rem,
+  "x-large": 1.25rem
 );
 
 $color-pack: false;
 
 $grid-breakpoints: (
-  'xs': 0,
-  'sm': 600px,
-  'md': 960px,
-  'lg': 1280px - 16px,
-  'xl': 1920px - 16px
+  "xs": 0,
+  "sm": 600px,
+  "md": 960px,
+  "lg": 1280px - 16px,
+  "xl": 1920px - 16px
 );
 
-$md-and-up: 'only screen and (min-width: #{map-get($grid-breakpoints, 'md')})';
-$sm-and-down: 'only screen and (max-width: #{map-get($grid-breakpoints, 'md') - 1})';
-$xs-only: 'only screen and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})';
+$md-and-up: "only screen and (min-width: #{map-get($grid-breakpoints, "md")})";
+$sm-and-down: "only screen and (max-width: #{map-get($grid-breakpoints, "md") - 1})";
+$xs-only: "only screen and (max-width: #{map-get($grid-breakpoints, "sm") - 1})";
